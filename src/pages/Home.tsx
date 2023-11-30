@@ -24,6 +24,6 @@ export default function Home() {
   );
 }
 
-export async function homeLoader() {
+export function homeLoader() {
   return logements;
 }

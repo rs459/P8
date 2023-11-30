@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "logement/:id",
         element: <Logement />,
-        loader: logementLoader as () => Promise<logement>,
+        loader: logementLoader as () => logement,
       },
       {
         path: "404",

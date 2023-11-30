@@ -34,11 +34,11 @@ export default function Logement() {
   );
 }
 
-export async function logementLoader({ params }: { params: { id: string } }) {
+export function logementLoader({ params }: { params: { id: string } }) {
   const logement = logements.find((logement) => logement.id === params.id);
   if (!logement) {
     console.log("something went wrong");
     return redirect("/404");
   }
-  return logement;
+  return logement as logement;
 }
