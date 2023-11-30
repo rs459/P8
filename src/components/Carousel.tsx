@@ -4,6 +4,10 @@ export default function Carousel({ pictures }: { pictures: string[] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const myRef = useRef<HTMLImageElement>(null);
 
+  if (pictures.length === 1) {
+    return <img height="100" src={pictures[0]} alt="" />;
+  }
+
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide === pictures.length - 1 ? 0 : prevSlide + 1
