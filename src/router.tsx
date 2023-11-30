@@ -12,7 +12,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -27,6 +26,14 @@ const router = createBrowserRouter([
         path: "logement/:id",
         element: <Logement />,
         loader: logementLoader as () => Promise<logement>,
+      },
+      {
+        path: "404",
+        element: <ErrorPage />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },
