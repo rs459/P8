@@ -5,13 +5,7 @@ import router from "./router";
 
 import "./App.scss";
 
-const root = document.getElementById("root");
-
-if (!root) {
-  throw new Error("root element not found");
-}
-
-ReactDOM.createRoot(root).render(
+ReactDOM.createRoot(document.getElementById("root") as Element).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
