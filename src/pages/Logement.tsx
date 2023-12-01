@@ -25,7 +25,7 @@ export default function Logement() {
       </Accordion>
       <Accordion title="Equipements">
         <ul>
-          {logement.equipments.map((equipment) => (
+          {logement.equipments.map((equipment: string) => (
             <li key={equipment}>{equipment}</li>
           ))}
         </ul>

@@ -22,7 +22,9 @@ export default function Accordion({
           className="accordion-trigger"
           aria-controls={accordionPanelId}
           id={accordionId}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
         >
           <span className="accordion-title">
             {title}

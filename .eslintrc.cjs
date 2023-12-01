@@ -16,5 +16,7 @@ module.exports = {
     project: ["./tsconfig.json", "./tsconfig.node.json"],
   },
   plugins: ["react-refresh", "eslint-plugin-jsx-a11y"],
-  rules: {},
+  rules: {
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+  },
 };

@@ -8,7 +8,7 @@ export default function Owner({
   return (
     <div className="host">
       <p>{name}</p>
-      <img src={picture}></img>
+      <img src={picture} alt=""></img>
     </div>
   );
 }
