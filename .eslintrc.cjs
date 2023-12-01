@@ -8,12 +8,13 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:jsx-a11y/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: ["./tsconfig.json", "./tsconfig.node.json"],
   },
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "eslint-plugin-jsx-a11y"],
   rules: {},
 };
