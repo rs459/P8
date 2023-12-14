@@ -1,14 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import ErrorPage from "./pages/ErrorPage";
-import Home, { homeLoader } from "./pages/Home";
-import Logement, { logementLoader } from "./pages/Logement";
+import Home from "./pages/Home";
+import Logement from "./pages/Logement";
 import About from "./pages/About";
 import MainLayout from "./layouts/MainLayout";
 
-import logement from "./data/logement-type";
-
-const router = createBrowserRouter([
+const Router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
@@ -16,7 +14,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: homeLoader,
       },
       {
         path: "about",
@@ -25,7 +22,6 @@ const router = createBrowserRouter([
       {
         path: "logement/:id",
         element: <Logement />,
-        loader: logementLoader as () => logement,
       },
       {
         path: "404",
@@ -39,4 +35,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export default Router;

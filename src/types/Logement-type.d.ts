@@ -1,4 +1,4 @@
-type logement = {
+type Logement = {
   id: string;
   title: string;
   cover: string;
@@ -14,4 +14,4 @@ type logement = {
   tags: string[];
 };
 
-export default logement;
+export default Logement;

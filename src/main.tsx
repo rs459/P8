@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import router from "./router";
+import Router from "./Router";
 
+import { DataProvider } from "./providers/DataProvider";
 import "./App.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as Element).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <DataProvider>
+      <RouterProvider router={Router} />
+    </DataProvider>
   </React.StrictMode>
 );

@@ -1,16 +1,16 @@
-import logement from "../data/logement-type";
+import Logement from "../types/Logement-type";
 
-import { Link, useLoaderData } from "react-router-dom";
-import logements from "../data/logements.json";
+import { Link } from "react-router-dom";
 
 import s from "./Home.module.scss";
+import useData from "../hooks/useData";
 
 export default function Home() {
-  const data = useLoaderData() as logement[];
+  const { data } = useData();
 
   return (
     <section className={s.logementGallery}>
-      {data.map((logement: logement) => (
+      {data?.map((logement: Logement) => (
         <Link
           to={`/logement/${logement.id}`}
           key={logement.id}
@@ -22,8 +22,4 @@ export default function Home() {
       ))}
     </section>
   );
-}
-
-export function homeLoader() {
-  return logements;
 }
