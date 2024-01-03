@@ -1,16 +1,11 @@
 .main-header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    margin-top: 45px;
     padding: 0 20px;
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &__logo {
-        font-size: 24px;
-        color: #000;
-        text-decoration: none;
-    }
+    color: #ff6060;
+
     &__nav {
         ul {
             display: flex;
@@ -20,10 +15,14 @@
 
         &-item {
             padding: 0 10px;
-        list-style: none;
+            list-style: none;
         
-            &:hover {
-                color: #1890ff;
+            a {
+                text-decoration: none;
+                color: #ff6060;
+                &:global(.active) {
+                    text-decoration: underline;
+                }
             }
         }
     }

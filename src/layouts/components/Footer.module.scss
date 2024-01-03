@@ -1,8 +1,18 @@
 .mainFooter {
   background: #000;
   color: #fff;
+  padding: 29px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  // &--logo {
-  // }
+  div {
+    margin-bottom: 29px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -1,0 +1,17 @@
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+
+    li {
+        background: #ff6060;
+        color: #fff;
+        border-radius: 10px;
+        min-width: 115px;
+        padding: 5px 10px;
+        text-align: center;
+        margin-right: 10px; 
+        font-size: 14px;
+    }
+}

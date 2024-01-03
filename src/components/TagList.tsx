@@ -1,10 +1,10 @@
+import s from "./TagList.module.scss";
+
 export default function TagList({ tags }: { tags: string[] }) {
   return (
-    <ul className="tagList">
+    <ul className={s.tagList}>
       {tags.map((tag) => (
-        <li key={tag} className="tag">
-          {tag}
-        </li>
+        <li key={tag}>{tag}</li>
       ))}
     </ul>
   );

@@ -1,0 +1,32 @@
+.page-about {
+    margin-top: 38px;
+}
+
+.about-image {
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+    margin: 0 auto;
+    height: 15vw;
+    max-height: 223px;
+    min-width: 110px;
+}
+
+.about-container {
+    padding-block: 38px;
+    padding-inline: 109px;
+
+    @media (max-width: 768px) {
+        padding-inline: 0;
+    }
+
+    :global(.accordion:not(:first-of-type)) {
+        padding-top: 28px;
+
+        @media (max-width: 768px) {
+            padding-top: 20px;
+        }
+    }
+
+}
+

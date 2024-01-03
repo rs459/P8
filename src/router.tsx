@@ -6,33 +6,38 @@ import Logement from "./pages/Logement";
 import About from "./pages/About";
 import MainLayout from "./layouts/MainLayout";
 
-const Router = createBrowserRouter([
+const Router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "logement/:id",
+          element: <Logement />,
+        },
+        {
+          path: "404",
+          element: <ErrorPage />,
+        },
+        {
+          path: "*",
+          element: <ErrorPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <MainLayout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "logement/:id",
-        element: <Logement />,
-      },
-      {
-        path: "404",
-        element: <ErrorPage />,
-      },
-      {
-        path: "*",
-        element: <ErrorPage />,
-      },
-    ],
-  },
-]);
+    basename: "/P8",
+  }
+);
 
 export default Router;

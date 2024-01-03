@@ -5,10 +5,12 @@ import Header from "./components/Header";
 export default function MainLayout() {
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
+      <div className="main-wrapper">
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+      </div>
       <Footer />
     </>
   );

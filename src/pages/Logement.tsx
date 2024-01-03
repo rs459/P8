@@ -10,9 +10,11 @@ import Carousel from "../components/Carousel";
 import { useEffect, useState } from "react";
 import LogementType from "../types/Logement-type";
 
+import s from "./Logement.module.scss";
+
 export default function Logement() {
   const [logement, setLogement] = useState<LogementType | null>(null);
-  const { data } = useData();
+  const { data, isLoading } = useData();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
@@ -27,10 +29,10 @@ export default function Logement() {
     }
   }, [data, id, logement, navigate]);
 
-  return (
-    <>
-      {logement ? (
-        <>
+  return isLoading
+    ? "Chargement en cours..."
+    : logement && (
+        <div className={s.logement}>
           <Carousel pictures={logement.pictures} />
           <h1>{logement.title}</h1>
           <h2>{logement.location}</h2>
@@ -47,10 +49,6 @@ export default function Logement() {
               ))}
             </ul>
           </Accordion>
-        </>
-      ) : (
-        <>Loading...</>
-      )}
-    </>
-  );
+        </div>
+      );
 }

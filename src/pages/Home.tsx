@@ -9,17 +9,22 @@ export default function Home() {
   const { data } = useData();
 
   return (
-    <section className={s.logementGallery}>
-      {data?.map((logement: Logement) => (
-        <Link
-          to={`/logement/${logement.id}`}
-          key={logement.id}
-          className={s.links}
-        >
-          <h2>{logement.title}</h2>
-          <img height="100" src={logement.cover} alt={logement.title} />
-        </Link>
-      ))}
-    </section>
+    <>
+      <div className={s.homeIntro}>
+        <h1>Chez vous, partout et ailleurs</h1>
+      </div>
+
+      <section className={s.logementGallery}>
+        {data?.map((logement: Logement) => (
+          <div className={s.logementCard} key={logement.id}>
+            <Link to={`/logement/${logement.id}`} className={s.links}>
+              <h2>{logement.title}</h2>
+            </Link>
+
+            <img src={logement.cover} alt={logement.title} />
+          </div>
+        ))}
+      </section>
+    </>
   );
 }

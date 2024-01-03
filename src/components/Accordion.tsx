@@ -1,5 +1,5 @@
 import { ReactNode, useId, useState } from "react";
-// import "./Accordion.scss";
+import s from "./Accordion.module.scss";
 
 // @see https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/
 export default function Accordion({
@@ -14,21 +14,21 @@ export default function Accordion({
   const accordionPanelId = useId();
 
   return (
-    <>
+    <div className="accordion">
       <h3>
         <button
           type="button"
           aria-expanded={isOpen}
-          className="accordion-trigger"
+          className={s.accordionTrigger}
           aria-controls={accordionPanelId}
           id={accordionId}
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
-          <span className="accordion-title">
+          <span className={s.accordionTitle}>
             {title}
-            <span className="accordion-icon"></span>
+            <span className={s.accordionIcon}></span>
           </span>
         </button>
       </h3>
@@ -36,11 +36,11 @@ export default function Accordion({
         id={accordionPanelId}
         role="region"
         aria-labelledby={accordionId}
-        className="accordion-panel"
+        className={s.accordionPanel}
         hidden={!isOpen}
       >
         {children}
       </div>
-    </>
+    </div>
   );
 }

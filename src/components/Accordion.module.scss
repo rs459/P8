@@ -1,0 +1,39 @@
+.accordion-trigger {
+    appearance: unset;
+    position: relative;
+    background-color: #ff6060;
+    color: #fff;
+    width: 100%;
+    border: 0;
+    text-align: left;
+}
+
+.accordion-panel {
+    background-color: #F6F6F6;
+}
+
+.accordion-title {
+   font-size: 1.5rem;
+   padding: 10px 15px;
+}
+
+.accordion-icon {
+    border: solid currentcolor;
+    border-width: 0 2px 2px 0;
+    height: 0.5rem;
+    pointer-events: none;
+    position: absolute;
+    right: 0.7rem;
+    top: 50%;
+    transform: translateY(-60%) rotate(45deg);
+    width: 0.5rem;
+  }
+  
+  .accordion-trigger:focus .accordion-icon,
+  .accordion-trigger:hover .accordion-icon {
+    border-color: hsl(0, 0%, 0%);
+  }
+  
+  .accordion-trigger[aria-expanded="true"] .accordion-icon {
+    transform: translateY(-50%) rotate(-135deg);
+  }

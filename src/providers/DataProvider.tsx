@@ -4,6 +4,7 @@ import Logement from "../types/Logement-type";
 type DataContextType = {
   data: Logement[] | null;
   setData: (data: Logement[] | null) => void;
+  isLoading: boolean;
 };
 
 export const DataContext = createContext<DataContextType>({
@@ -11,19 +12,24 @@ export const DataContext = createContext<DataContextType>({
   setData: () => {
     throw new Error("setData function is not initialized");
   },
+  isLoading: true,
 });
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [data, setData] = useState<Logement[] | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/logements.json");
-      const data = (await response.json()) as Logement[];
-      setData(data);
-    }
-
-    void fetchData();
+    fetch("./logements.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data as Logement[]);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -31,6 +37,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
       value={{
         data,
         setData,
+        isLoading,
       }}
     >
       {children}
