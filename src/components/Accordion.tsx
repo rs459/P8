@@ -14,7 +14,7 @@ export default function Accordion({
   const accordionPanelId = useId();
 
   return (
-    <div className="accordion">
+    <div className={s.accordion}>
       <h3>
         <button
           type="button"

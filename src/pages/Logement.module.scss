@@ -1,3 +1,21 @@
 .logement {
     color: #FF6060;
+
+    .introOwnerRating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    // .intro {}
+    // .ownerAndRating { 
+        
+    // }
+
+    .desc {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        gap: 20px;
+    }
 }

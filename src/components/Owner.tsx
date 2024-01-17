@@ -1,3 +1,5 @@
+import s from "./Owner.module.scss";
+
 export default function Owner({
   name,
   picture,
@@ -6,7 +8,7 @@ export default function Owner({
   picture: string;
 }) {
   return (
-    <div className="host">
+    <div className={s.host}>
       <p>{name}</p>
       <img src={picture} alt=""></img>
     </div>

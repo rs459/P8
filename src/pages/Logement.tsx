@@ -34,21 +34,32 @@ export default function Logement() {
     : logement && (
         <div className={s.logement}>
           <Carousel pictures={logement.pictures} />
-          <h1>{logement.title}</h1>
-          <h2>{logement.location}</h2>
-          <TagList tags={logement.tags} />
-          <Owner name={logement.host.name} picture={logement.host.picture} />
-          <Ratings rating={parseInt(logement.rating)} />
-          <Accordion title="Description">
-            <p>{logement.description}</p>
-          </Accordion>
-          <Accordion title="Equipements">
-            <ul>
-              {logement.equipments.map((equipment: string) => (
-                <li key={equipment}>{equipment}</li>
-              ))}
-            </ul>
-          </Accordion>
+          <div className={s.introOwnerRating}>
+            <div className={s.intro}>
+              <h1>{logement.title}</h1>
+              <h2>{logement.location}</h2>
+              <TagList tags={logement.tags} />
+            </div>
+            <div className={s.ownerAndRating}>
+              <Owner
+                name={logement.host.name}
+                picture={logement.host.picture}
+              />
+              <Ratings rating={parseInt(logement.rating)} />
+            </div>
+          </div>
+          <div className={s.desc}>
+            <Accordion title="Description">
+              <p>{logement.description}</p>
+            </Accordion>
+            <Accordion title="Equipements">
+              <ul>
+                {logement.equipments.map((equipment: string) => (
+                  <li key={equipment}>{equipment}</li>
+                ))}
+              </ul>
+            </Accordion>
+          </div>
         </div>
       );
 }
